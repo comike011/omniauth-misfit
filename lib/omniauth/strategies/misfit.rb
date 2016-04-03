@@ -48,6 +48,10 @@ module OmniAuth
         @raw_info ||= MultiJson.load(access_token.get('/move/resource/v1/user/me/profile').body)
       end
 
+      def query_string
+        ''
+      end
+
       private
       def client_params
         {:client_id => options[:client_id], :redirect_uri => callback_url, :response_type => 'code', :scope => DEFAULT_SCOPE}
